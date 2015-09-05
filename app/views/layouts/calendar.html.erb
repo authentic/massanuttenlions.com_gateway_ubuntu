@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The McGaheysville-Massanutten Lions Club helps satisfy needs that present themselves in our local community, our district, our state, our nation and the world.  We locally serve the McGaheysville/Massanutten area including the eastern half of Rockingham County in the Commonwealth of Virginia, USA"/>
+  <meta name="keywords" content="Lions Clubs International, community service, volunteer work"/>
+  <meta name="robots" content="index, nofollow"/>
+  <meta name="robots" content="noarchive"/>
+  <%= render "layouts/fonts" %>
+  <title><%= full_title(yield(:page_title)) %></title>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag "calendar", :media => "all" %>
+  <%= javascript_include_tag "calendar" %>
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-37969295-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+          var ga = document.createElement('script');
+          ga.type = 'text/javascript';
+          ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</head>
+<body>
+<%= render "layouts/header" %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="yui3-g" id="layout_cal">
+      <div class="yui3-u" id="nav_cal">
+        <div class="lion-menu "><%= render_navigation :level => 2..3 %></div>
+      </div>
+      <div class="yui3-u" id="main_cal">
+        <div class="content_cal">  <%= render 'layouts/messages' %>
+          <div class="breadcrumbs"> <%= render_navigation :renderer => :breadcrumbs, :join_with => " &gt; ", :static_leaf => true %> </div>
+          <%= yield %>
+          <div class="navigation"><%= render_navigation(:level => 4..5) %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>
+</body>
+</html>

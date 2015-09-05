@@ -1,0 +1,59 @@
+<fieldset>
+  <legend>Personal details</legend>
+  <%= f.input :first_name, :required => true %>
+  <%= f.input :last_name %>
+  <%= f.input :spouse_first_name %>
+  <%= f.input :birthday, :as => :date, :discard_year => true, :prompt => {:month => 'Select month', :day => 'Select day'} %>
+  <%= f.input :member_as_of, :label => 'Pledge Year' %>
+  <%= f.input :biography, :input_html => {:rows => 7} %>
+</fieldset>
+<fieldset>
+  <legend>Address</legend>
+  <%= f.input :street %>
+  <%= f.input :house_number %>
+  <%= f.input :city %>
+  <%= f.input :state, :prompt => 'Select State', :label => 'State / region', :collection => ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'] %>
+  <%= f.input :postal_code, :label => 'Zip code' %>
+  <%= f.input :phone, :hint => "(000) 000-0000" %>
+</fieldset>
+<% if current_user.has_role? :admin %>
+    <fieldset>
+      <legend>Club Status</legend>
+      <%= f.input :status, :label => 'Club Status', :collection => ['Active', 'None'], :as => :radio_buttons %>
+      <%= f.input :leadership, :prompt => 'Select Leadership Post', :label => 'Club Leadership', :collection => ['None', 'President', 'Vice President', 'Secretary', 'Treasurer', 'Lion Tamer', 'Tail Twister', 'Membership Chair', 'Director 2 Year', 'Past President'] %>
+      <%= f.input :officers, :prompt => 'Select Officers Post', :label => 'LOMFI Officers', :collection => ['None', 'LOMFI President', 'LOMFI Vice President', 'LOMFI Secretary', 'LOMFI Treasurer'] %>
+      <%= f.input :webmaster, :collection => ['Webmaster', 'None'], :as => :radio_buttons %>
+      <%= f.input :newsletter_editor, :collection => ['Editor', 'None'], :as => :radio_buttons %>
+      <%= f.input :photographer, :collection => ['Photographer', 'None'], :as => :radio_buttons %>
+      <%= f.input :signature %>
+    </fieldset>
+    <fieldset>
+      <legend>Avatar</legend>
+      <br/>
+      <ul class="thumbnails">
+        <li class="span3">
+          <a href="#" class="thumbnail">
+            <%= image_tag @user.avatar.url(:medium) %>
+          </a>
+        </li>
+        <li class="span2">
+          <a href="#" class="thumbnail">
+            <%= image_tag @user.avatar.url(:small) %>
+          </a>
+        </li>
+      </ul>
+      <div class="control-group">
+        <%= f.label "Upload a file", :class => "control-label" %>
+        <div class="controls">
+          <%= f.file_field :avatar, :class => "input-large" %>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Roles</legend>
+      <%= f.fields_for :roles do |builder| %>
+          <%= render "devise/shared/roles", :f => builder %>
+      <% end %>
+    </fieldset>
+<% end %>

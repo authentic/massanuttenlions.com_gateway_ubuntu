@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The McGaheysville-Massanutten Lions Club helps satisfy needs that present themselves in our local community, our district, our state, our nation and the world.  We locally serve the McGaheysville/Massanutten area including the eastern half of Rockingham County in the Commonwealth of Virginia, USA"/>
+  <meta name="keywords" content="Lions Clubs International, community service, volunteer work"/>
+  <meta name="robots" content="index, nofollow"/>
+  <meta name="robots" content="noarchive"/>
+  <%= render "layouts/fonts" %>
+  <title><%= full_title(yield(:page_title)) %></title>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <%= favicon_link_tag 'favicon.ico' %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-37969295-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  </script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50" onload="initialize()">
+<%= render "layouts/header" %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="form-board"><%= render 'layouts/messages' %>
+      <div class="well"> <%= yield %></div>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<%= f.error_notification %>
+<%= f.input :name, :label => 'Subject Name' %>
+<%= f.input :position, :collection => 1..@subject_count, :prompt => "Select position" %>
+<%= f.input :visible, :as => :boolean %>
+
+

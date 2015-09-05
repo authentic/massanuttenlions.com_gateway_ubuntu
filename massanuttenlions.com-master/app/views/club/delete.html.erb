@@ -1,0 +1,39 @@
+<% provide :page_title, "Delete Club Information" %>
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to({:controller => 'access', :action => 'menu'}, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Admin Home
+    <% end %>
+  </li>
+
+  <li>
+    <%= link_to({:action => 'list'}, :class => "btn-primary") do %>
+        <i class="icon-th-list icon-white"></i> Club Information
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(root_path, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Site Home
+    <% end %>
+  </li>
+
+</ul>
+<div>
+  <div class="form-board">
+    <%= simple_form_for @club, :url => {:action => 'destroy', :id => @club.id} do |f| %>
+        <div class="well">
+          <fieldset>
+            <legend><%= "Delete Club Information '#{@club.current_year}'" %></legend>
+            <p class="alert alert-error">Are you sure you want to permanently delete Club Information
+              "<%= @club.current_year %>"?</p>
+
+            <div class="form-actions">
+              <%= f.submit "Delete Club Information", :class => 'btn btn-large' %>
+              <%= link_to({:controller => 'club', :action => 'list'}, :class => 'btn btn-large') do %>
+                  Cancel
+              <% end %>
+            </div>
+          </fieldset>
+        </div>
+    <% end %></div>
+</div>

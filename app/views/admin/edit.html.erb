@@ -1,0 +1,46 @@
+<% provide :page_title, "Edit user: #{@user.user_name}" %>
+
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to({:controller => 'access', :action => 'menu'}, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Admin Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(root_path, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Site Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to({:action => 'list'}, :class => "btn-primary") do %>
+        <i class="icon-th-list icon-white"></i> Users List
+    <% end %>
+  </li>
+</ul>
+
+<div class="page-header">
+  <h1>Edit Profile Information</h1>
+</div>
+<div class="form-board well">
+  <%= simple_form_for(@user, :url => {:controller => 'admin',:action => 'update', :id => @user.id}, :html => {:method => :put, :class => 'form-horizontal'}) do |f| %>
+      <%= f.error_notification %>
+      <fieldset>
+        <legend>Account</legend>
+        <div class="form-inputs">
+          <%= f.input :user_name, :required => true, :autocomplete => "off" %>
+          <%= f.input :email, :required => true, :autofocus => true %>
+          <!--<%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>-->
+          <!--<%= f.input :password_confirmation, :required => false %>-->
+        </div>
+      </fieldset>
+      <%= render(:partial => "devise/shared/profile_info", :locals => {:f => f}) %>
+      <div class="form-actions">
+        <%= f.button :submit, "Update", :class => "btn btn-large" %>
+        <%= link_to({:controller => 'admin', :action => 'list'}, :class => 'btn btn-large') do %>
+            Cancel
+        <% end %>
+      </div>
+  <% end %>
+
+
+</div>

@@ -1,0 +1,34 @@
+<% provide :page_title, "Create Page" %>
+
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to({:controller => 'access', :action => 'menu'}, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Admin Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(root_path, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Site Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to subjects_path, :class => "btn-primary" do %>
+        <i class="icon-th-list icon-white"></i> Subjects List
+    <% end %>
+  </li>
+</ul>
+<div>
+  <%= simple_form_for @page, :url => {:action => 'create', :subject_id => @subject.id}, :html => {:class => "form-horizontal"} do |f| %>
+      <div class="well">
+        <fieldset>
+          <legend>Create Page</legend>
+          <%= render(:partial => "form", :locals => {:f => f}) %>
+          <div class="form-actions">
+            <%= f.submit "Create Page", :class => 'btn btn-large' %>
+            <%= link_to({:controller => 'pages', :action => 'list', :subject_id => @page.subject_id}, :class => 'btn btn-large') do %>
+                Cancel
+            <% end %>
+          </div>
+        </fieldset>
+      </div>
+  <% end %> </div>

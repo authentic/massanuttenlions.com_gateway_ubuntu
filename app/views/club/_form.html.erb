@@ -1,0 +1,28 @@
+<%= f.input :current_year, :label=>'Current Year:', :autofocus => true %>
+<%= f.input :name, :label => 'Club Name:' %>
+<%= f.input :meeting_address, :label => 'Meeting Address:' %>
+<%= f.input :mailing_address, :label => 'Mailing Address:' %>
+<%= f.input :city, :label => 'City:' %>
+<%= f.input :postal_code, :label => 'Postal Code:' %>
+<%= f.input :state, :prompt => 'Select State', :label => 'State / region', :collection => ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'] %>
+<%= f.input :phone, :label => 'Club Phone:' %>
+<%= f.input :email, :label => 'Club Email:' %>
+<%= f.input :president_email, :label => 'President Email:' %>
+<%= f.input :webmaster_email, :label => 'Webmaster Email:' %>
+<%= f.input :newsletter_editor_email, :label => 'Newsletter Editor Email:' %>
+<%= f.input :secretary_email, :label => 'Secretary Email:' %>
+<%= f.input :photographer_email, :label => 'Photographer Email:' %>
+
+
+
+<fieldset>
+  <legend>Board of Directors Photo</legend>
+  <div class="control-group">
+    <%= f.label "Upload a file:", :class => "control-label" %>
+    <div class="controls">
+      <%= f.file_field :avatar, :class => "input-large" %>
+    </div>
+  </div>
+
+</fieldset>
+<hr>

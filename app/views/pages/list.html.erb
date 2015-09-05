@@ -1,0 +1,65 @@
+<% provide :page_title, 'Pages List' %>
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to({:controller => 'access', :action => 'menu'}, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Admin Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(root_path, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Site Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(subjects_path, :class => 'btn-primary') do %>
+        <i class="icon-th-list icon-white"></i> Subjects List
+    <% end %>
+  </li>
+</ul>
+
+<div>
+  <h2> <%= "Pages of the Subject '#{@subject.name}'".upcase %></h2>
+  <ul class="nav nav-pills">
+    <li>
+      <%= link_to({:action => 'new', :subject_id => @subject.id}, :class => "btn-info") do %>
+          <i class="icon-plus"></i> Add New Page
+          </li>
+      <% end %>
+      </ul>
+  <div><p class="alert alert-info"><%= pluralize(@pages.size, 'page') %> found</p></div>
+
+  <table class="table table-striped table-bordered table-condensed table-hover" summary="Page list">
+    <thead>
+    <tr>
+      <th>Position</th>
+      <th>Page name</th>
+      <th>Visible</th>
+      <th>Permalink</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @pages.each do |page| %>
+        <tr>
+          <td><%= page.position %></td>
+          <td><%= page.name %></td>
+          <td><%= status_tag(page.visible) %></td>
+          <td><%= page.permalink %></td>
+
+          <td>
+            <%= link_to({:action => 'edit', :id => page.id, :subject_id => @subject.id}, :class => "btn btn-mini btn-primary") do %>
+                <i class="icon-pencil"></i> Edit
+            <% end %>
+            <%= link_to({:action => 'delete', :id => page.id, :subject_id => @subject.id}, :class => "btn btn-mini btn-danger") do %>
+                <i class="icon-trash"></i> Delete
+            <% end %>
+            <%= link_to({:action => 'show', :id => page.id, :subject_id => @subject.id}, :class => "btn btn-mini btn-info") do %>
+                <i class="icon-info-sign"></i> Info
+            <% end %>
+
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,10 @@
+<%= f.error_notification %>
+<%= f.input :subject_id, :label => 'Subject', :collection => @subjects.collect { |s| [s.name, s.id] } %>
+<%= f.input :name, :label => 'Page Name' %>
+<%= f.input :permalink %>
+<%= f.input :position, :collection => 1..@page_count, :prompt => "Select position" %>
+<%= f.input :visible, :as => :boolean %>
+<%= f.input :content_type, :collection => ['text', 'HTML'], :as => :radio_buttons %>
+<%= f.input :content, :as => :ckeditor, :label => 'Content', :input_html => { :ckeditor => {:toolbar => 'Full'} }  %>
+
+

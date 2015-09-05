@@ -1,0 +1,33 @@
+<% provide :page_title, "Massanutten Lions" %>
+<div class="page-header">
+  <h1>Massanutten Lions</h1>
+</div>
+<h3>Total number of members: <%= @users.count %></h3>
+
+<div id="gallery">
+  <div class="showcase hidden decor decor-10">
+    <img src="" width="160" height="160" alt=""/>
+
+    <div class="name center"></div>
+    <div class="post"></div>
+    <ins class="i"><i></i></ins>
+    <div class="d tl"></div>
+    <div class="d tr"></div>
+    <div class="d bl"></div>
+    <div class="d br"></div>
+
+  </div>
+  <% @users.each do |user| %>
+      <%= content_tag "div", :class => "item", :title => "#{user.signature}" do %>
+          <%= image_tag user.avatar.url(:thumb), :style => "opacity: 001; ", :alt => "#{user.signature}" %>
+          <%= image_tag user.avatar.url(:medium), :class => "hidden" %>
+          <span class="hidden name"><%= user.signature %></span>
+          <% if user_signed_in? %> <span class="hidden position"><%= user.first_name %> <%= user.last_name %>,<br> <%= user.house_number %> <%= user.street %>, <%= user.city %>, <%= user.state %>, <%= user.postal_code %><br> Phone: <%= user.phone %><br>
+  Email: <%= user.email %></span>
+          <% end %>
+      <% end %>
+  <% end %>
+</div>
+
+
+

@@ -1,0 +1,45 @@
+<% provide :page_title, "Show Subject: #{@subject.name}" %>
+<ul class="nav nav-pills">
+  <li>
+    <%= link_to({:controller => 'access', :action => 'menu'}, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Admin Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(root_path, :class => "btn-primary") do %>
+        <i class="icon-home icon-white"></i> Site Home
+    <% end %>
+  </li>
+  <li>
+    <%= link_to(subjects_path, :class => 'btn-primary') do %>
+        <i class="icon-th-list icon-white"></i> Subjects List
+    <% end %>
+  </li>
+</ul>
+<div>
+  <h2><%= "Subject Detail View - '#{@subject.name}'".upcase %></h2>
+  <table class="table table-striped table-bordered table-condensed" summary="Subject detail view">
+    <tbody>
+    <tr>
+      <th width="130">Name:</th>
+      <td><%= @subject.name %></td>
+    </tr>
+    <tr>
+      <th>Position:</th>
+      <td><%= @subject.position %></td>
+    </tr>
+    <tr>
+      <th>Visible:</th>
+      <td><%= @subject.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created:</th>
+      <td><%= @subject.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated:</th>
+      <td><%= @subject.updated_at %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

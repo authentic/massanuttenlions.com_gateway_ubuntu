@@ -1,0 +1,28 @@
+<% provide :page_title, "Massanutten Lions Phone Book" %>
+<div class="page-header">
+  <h1>McGaheysville-Massanutten Lions Club Phone Book</h1>
+</div>
+<h3>Total number of members: <%= @users.count %></h3>
+
+
+<table class="table table-hover table-bordered table-striped table-condensed">
+  <thead>
+  <tr> <th width="30">&nbsp;</th>
+    <th style="text-align: center;vertical-align: middle; "><%= link_to "Name", :sort => "last_name" %> </th>
+    <th style="text-align: center;vertical-align: middle; "><%= link_to "Address", :sort => "street" %> </th>
+    <th style="text-align: center;vertical-align: middle; "><%= link_to "Phone", :sort => "phone" %>/<%= link_to "Birthday", :sort => "birthday" %></th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+      <tr><td><%= image_tag user.avatar.url(:thumb), :size => '30x30' %></td>
+        <td><%= user.first_name+' '+user.last_name %></td>
+        <td><%= user.house_number+' '+user.street+', '+user.city+', '+user.state+' '+user.postal_code %> <br><a href='mailto:#' target='_blank'><%= user.email %></a></td>
+        <td><%= user.phone %><br><%= user.birthday.strftime("%B %d") %></td>
+
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

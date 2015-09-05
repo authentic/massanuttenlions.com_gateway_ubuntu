@@ -1,0 +1,13 @@
+---
+:User:
+  :avatar:
+  - :large
+  - :medium
+  - :small
+  - :thumb
+:Club:
+  :avatar:
+  - :large
+  - :medium
+  - :small
+  - :thumb

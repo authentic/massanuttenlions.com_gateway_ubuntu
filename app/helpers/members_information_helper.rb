@@ -1,0 +1,2 @@
+module MembersInformationHelper
+end

@@ -1,0 +1,76 @@
+.navbar {
+    display: none;
+}
+.archive{
+    display: none;
+    visibility:hidden;
+}
+#layout {
+    padding-left: 0; /* "left col" width */
+    padding-right: 0; /* "right col" width */
+}
+
+.lion-menu {
+    display: none;
+}
+
+#nav {
+    margin-left: 0; /* "left col" width */
+    width: 0;
+
+}
+
+#extra {
+    width: 0;
+    margin-right: 0; /* "right col" width */
+    display: none;
+}
+
+.thumbnail {
+    background: none;
+}
+
+.edit-menu {
+    display: none;
+}
+
+.breadcrumbs {
+    display: none;
+}
+
+.page-header,
+.page-content {
+    background: none;
+}
+
+.table-bordered {
+    border: 1px solid #DDD;
+    border-collapse: collapse;
+}
+
+.page-header-info,
+.page-header__langs,
+.sections-nav,
+.page-content__bottom-gradient,
+.footer-sitemap,
+.banner-scroll {
+    display: none;
+}
+
+.page-content {
+    padding-bottom: 0;
+}
+
+.page-content > .cols > .col_25 {
+    display: none;
+}
+
+.page-footer {
+    margin-top: 0;
+    height: auto;
+    position: static;
+}
+
+.section-index-item__link .i {
+    border-bottom: none;
+}

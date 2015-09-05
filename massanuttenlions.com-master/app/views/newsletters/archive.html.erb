@@ -1,0 +1,65 @@
+<% provide :page_title, "Archive" %>
+<% unless @newsletter.nil? %>
+
+    <% [@newsletter].each do |n| %>
+        <% provide :page_title, "Newsletter #{n.period.strftime('%B %Y')}" %>
+        <%= n.header.html_safe %>
+        <%= n.content.html_safe %>
+        <%= n.footer.html_safe %>
+    <% end %>
+<% else %>
+    <p class="alert alert-error">No data available!</p>
+<% end %>
+<% if @newsletter.period >=Date.new(2012,6,30)  %>
+
+<h5>COMING EVENTS</h5>
+<p>Please visit our <%= link_to "Calendar", '/calendar' %> for more details on the following coming events:</p>
+<h5> <%= @newsletter.period.strftime('%B %Y') %></h5>
+<table class="table table-striped table-hover table-bordered table-condensed">
+  <thead>
+  <tr>
+    <th width="20%" style="text-align: center;vertical-align: middle;">Event Name</th>
+    <th width="30%" style="text-align: center;vertical-align: middle;">When</th>
+    <th width="50%" style="text-align: center;vertical-align: middle;">Where</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% start_min=@newsletter.period.at_beginning_of_month.to_datetime %>
+  <% start_max=@newsletter.period.end_of_month.to_datetime+23.hour+59.minute+59.second %>
+   <% events = @cal.find_events_in_range(start_min, start_max)  %>
+  <% events.each do |e| %>
+      <tr>
+        <td> <strong> <%= e.title %></strong></td>
+        <td><%= (e.start_time.to_datetime-5.hour).strftime("%B %d, %Y, %I:%M %p")+" - "+(e.end_time.to_datetime-5.hour).strftime("%I:%M %p")%></td>
+        <td><%= e.location%></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<% next_period= @newsletter.period+1.month %>
+
+
+<h5> <%= next_period.strftime('%B %Y')  %></h5>
+<table class="table table-striped table-hover table-bordered table-condensed">
+  <thead>
+  <tr>
+    <th width="20%" style="text-align: center;vertical-align: middle;">Event Name</th>
+    <th width="30%" style="text-align: center;vertical-align: middle;">When</th>
+    <th width="50%" style="text-align: center;vertical-align: middle;">Where</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% start_min_next_period=next_period.at_beginning_of_month.to_datetime %>
+  <% start_max_next_period=next_period.at_end_of_month.to_datetime+23.hour+59.minute+59.second %>
+
+  <% next_period_events = @cal.find_events_in_range(start_min_next_period, start_max_next_period)  %>
+  <% next_period_events.each do |i| %>
+      <tr>
+        <td> <strong> <%= i.title %></strong></td>
+        <td><%= (i.start_time.to_datetime-5.hour).strftime("%B %d, %Y, %I:%M %p")+" - "+(i.end_time.to_datetime-5.hour).strftime("%I:%M %p")%></td>
+        <td> <%= i.location %></td>
+      </tr>
+  <% end %>    <% end %>
+  </tbody>
+</table>

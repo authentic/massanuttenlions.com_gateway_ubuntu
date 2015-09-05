@@ -1,0 +1,44 @@
+<% provide :page_title, "Edit Profile Information" %>
+
+<div class="page-header">
+  <h1>Edit Profile Information</h1>
+</div>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :put, :class => "form-horizontal"}) do |f| %>
+    <%= f.error_notification %>
+
+    <fieldset>
+      <legend>Account</legend>
+      <div class="form-inputs">
+        <% if current_user.has_role? :admin %>
+            <%= f.input :user_name, :required => true, :autocomplete => "off" %>
+        <% end %>
+        <%= f.input :email, :required => true, :autofocus => true %>
+        <div class="alert alert-success"><p><i><strong>To Change Password</strong> - fill out all three field below, else leave blank if you don't want to change your password</i></p></div>
+        <%= f.input :current_password, :required => true %>
+        <%= f.input :password,:label => 'New Password', :autocomplete => "off", :required => false %>
+        <%= f.input :password_confirmation,:label => 'Confirm New Password', :required => false %>
+
+      </div>
+    </fieldset>
+    <%= render(:partial => "devise/shared/profile_info", :locals => {:f => f}) %>
+
+
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update", :class => "btn-large" %>
+    </div>
+<% end %>
+
+
+
+
+
+<!--<h3>Cancel my account</h3>-->
+
+<!--<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>-->
+
+<!--<%= link_to "Back", :back %>-->
+
+
+
+
