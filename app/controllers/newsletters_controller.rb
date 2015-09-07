@@ -11,7 +11,7 @@ class NewslettersController < ApplicationController
   def index
     @newsletter= Newsletter.order('newsletters.period ASC').where(:visible => true).last
     @club=Club.last
-    oauth_yaml = YAML.load_file('.google-api.yaml')
+    oauth_yaml = YAML.load_file('google-api.yaml')
 
     @cal = Google::Calendar.new(:client_id     => oauth_yaml["client_id"],
                                :client_secret => oauth_yaml["client_secret"],
@@ -20,7 +20,7 @@ class NewslettersController < ApplicationController
                                :refresh_token=> oauth_yaml["refresh_token"]) # this is what Google uses for 'applications'
     end
     def archive
-      oauth_yaml = YAML.load_file('.google-api.yaml')
+      oauth_yaml = YAML.load_file('google-api.yaml')
       @cal = Google::Calendar.new(:client_id     => oauth_yaml["client_id"],
                                   :client_secret => oauth_yaml["client_secret"],
                                   :calendar      => oauth_yaml["calendar"],
@@ -37,7 +37,7 @@ class NewslettersController < ApplicationController
 
   def show
     @newsletter = Newsletter.find(params[:id])
-    oauth_yaml = YAML.load_file('.google-api.yaml')
+    oauth_yaml = YAML.load_file('google-api.yaml')
     @cal = Google::Calendar.new(:client_id     => oauth_yaml["client_id"],
                                 :client_secret => oauth_yaml["client_secret"],
                                 :calendar      => oauth_yaml["calendar"],
@@ -76,10 +76,9 @@ class NewslettersController < ApplicationController
     @newsletter=Newsletter.find(params[:id])
     @club=Club.last
     @president = User.where(:status => "Active", :leadership => %w(President)).first
+    @lomfi_president = User.where(:status => "Active", :officers => ['LOMFI President']).first
     @treasurer = User.where(:status => "Active", :leadership => %w(Treasurer)).first
-    @editor=User.where(:status => "Active", :newsletter_editor => %w(Editor)).first
     @secretary=User.where(:status => "Active", :leadership => %w(Secretary)).first
-    @photographer=User.where(:status => "Active", :photographer => %w(Photographer)).first
     @leaders = User.sorted_by_leadership.where(:status => "Active", :leadership => ['President', 'Vice President', 'Secretary', 'Treasurer', 'Lion Tamer', 'Tail Twister', 'Membership Chair', 'Director 2 Year', 'Past President'])
     @users=User.where(:status => "Active")
     @officers = User.sorted_by_officers.where(:status => "Active", :officers => ['LOMFI President'])

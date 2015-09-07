@@ -11,18 +11,19 @@
                 <em><strong>President:</strong></em> <%= @president.signature %>
                 <a href='mailto:#' target='_blank'> <%= @club.president_email %></a><br>
             <% end %>
+            <% if @lomfi_president %>
+                <em><strong> LOMFI President:</strong></em> <%= @lomfi_president.signature %>
+                <a href='mailto:#' target='_blank'> <%= @club.lomfi_president_email %></a><br>
+            <% end %>
             <% if @secretary %>
                 <em><strong>Secretary:</strong></em> <%= @secretary.signature %>
                 <a href='mailto:#' target='_blank'> <%= @club.secretary_email %></a><br>
             <% end %>
             <% if @treasurer %>
                 <em><strong> Treasurer:</strong></em> <%= @treasurer.signature %>
-                <a href='mailto:#' target='_blank'> <%= @club.newsletter_editor_email %></a><br>
+                <a href='mailto:#' target='_blank'> <%= @club.treasurer_email %></a><br>
             <% end %>
-            <% if @photographer %>
-                <em><strong>Photographer:</strong></em> <%= @photographer.signature %>
-                <a href='mailto:#' target='_blank'> <%= @club.photographer_email %></a><br>
-            <% end %>
+
             </small></p>
         </td>
         <td width="30%">
@@ -33,3 +34,24 @@
     </table>
     <hr class="hrLion">
 <% end %>
+<figure class="float-left">
+  <% if @president %>
+
+
+  <%= image_tag @president.avatar.url(:medium)%><figcaption>Lion President Buddy</figcaption></figure>
+
+<h4><em>PRESIDENT&#39;S MESSAGE</em></h4>
+
+<p>Type the text here</p>
+
+<hr class="clearfix" />
+<h4><em>Lions Club Meeting Minutes</em></h4>
+
+<p>Type the text here</p>
+
+<hr class="clearfix" />
+<h4><em>Lions Club Meeting Minutes</em></h4>
+
+<p>Type the text here</p>
+
+<hr class="clearfix" /><% end %>

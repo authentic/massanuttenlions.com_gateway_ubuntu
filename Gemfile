@@ -1,22 +1,22 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.18'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.20'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'simple-navigation-bootstrap', "1.0.0"
-gem 'simple-navigation', "3.10.0"
-gem "ckeditor", "4.0.4"
-gem "devise", "2.2.8"
-gem "cancan"
-gem "paperclip", "~> 2.7.4"
-gem "simple_form"
-gem "will_paginate", "~> 3.0.3"
-gem "google_calendar", "~> 0.4.3"
-gem "omniauth", "~> 1.1.1"
-gem "omniauth-google-oauth2", "~> 0.1.13"
+gem 'simple-navigation-bootstrap', '1.0.0'
+gem 'simple-navigation', '3.10.0'
+gem 'ckeditor', '4.0.4'
+gem 'devise', '2.2.8'
+gem 'cancan'
+gem 'paperclip', '~> 2.7.4'
+gem 'simple_form'
+gem 'will_paginate', '~> 3.0.3'
+gem 'google_calendar', '~> 0.4.3'
+gem 'omniauth', '~> 1.1.1'
+gem 'omniauth-google-oauth2', '~> 0.1.13'
 gem 'json'
-gem "octokit", '~> 1.23'
+gem 'octokit', '~> 1.23'
 gem 'mercury-rails'
 
 
@@ -28,12 +28,12 @@ group :development do
   # Deploy with Capistrano
 
 
-  gem 'capistrano', '~> 2.15'
+  gem 'capistrano', '~> 2.15.6'
   # gem 'capistrano-bundler' # for capistrano/bundler
   # gem 'capistrano-rails' # for capistrano/rails/*
   # gem 'capistrano-passenger'
   # gem 'capistrano-linked-files'
-  # gem 'net-ssh', '2.8.0'
+  #gem 'net-ssh', '~> 2.7.0'
 end
 
 # Gems used only for assets and not required
@@ -66,11 +66,11 @@ gem 'jquery-rails'
 
 group :test do
   gem 'capybara', '001.001.2'
-    gem 'rb-inotify', '0.8.8'
+  gem 'rb-inotify', '0.8.8'
   gem 'libnotify', '0.5.9'
   gem 'guard-spork', '0.3.2'
   gem 'spork', '0.9.0'
 end
 
-gem 'execjs', "1.4.0"
+gem 'execjs', '1.4.0'
 #gem 'therubyracer', :require => 'execjs'

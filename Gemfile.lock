@@ -131,7 +131,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
-    net-ssh (2.9.2)
+    net-ssh (2.7.0)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     netrc (0.7.9)
@@ -682,7 +682,7 @@ PLATFORMS
 DEPENDENCIES
   annotate (= 2.5.0)
   cancan
-  capistrano (~> 2.15)
+  capistrano (~> 2.15.6)
   capybara (= 001.001.2)
   ckeditor (= 4.0.4)
   coffee-rails (= 3.2.2)
@@ -695,7 +695,7 @@ DEPENDENCIES
   json
   libnotify (= 0.5.9)
   mercury-rails
-  mysql2
+  mysql2 (~> 0.3.20)
   octokit (~> 1.23)
   omniauth (~> 1.1.1)
   omniauth-google-oauth2 (~> 0.1.13)

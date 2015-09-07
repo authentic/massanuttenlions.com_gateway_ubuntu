@@ -30,7 +30,7 @@ class Club < ActiveRecord::Base
   has_attached_file :avatar, :styles => {:small => "X100", :medium => "X166", :large => "300x", :thumb => "60x"}, :url => "/paperclip_assets/club_info/:id_partition/:style/:basename.:extension", :path => ":rails_root/public/paperclip_assets/club_info/:id_partition/:style/:basename.:extension"
 
   attr_accessible :name, :meeting_address, :mailing_address, :postal_code, :state, :email,
-                  :president_email, :webmaster_email, :phone, :current_year, :city, :newsletter_editor_email, :secretary_email, :avatar, :photographer_email
+                  :president_email, :webmaster_email, :phone, :current_year, :city, :newsletter_editor_email, :secretary_email, :avatar, :photographer_email, :lomfi_president_email, :treasurer_email
 
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
