@@ -293,7 +293,7 @@ DEPENDENCIES
   paperclip (~> 2.7.4)
   rails (= 3.2.18)
   rb-inotify (= 0.8.8)
-  ref (~> 2.0.0)
+  ref (= 2.0.0)
   rspec-rails (= 2.10.0)
   sass-rails (= 3.2.5)
   simple-navigation (= 3.10.0)
