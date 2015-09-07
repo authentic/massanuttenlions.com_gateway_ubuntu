@@ -121,7 +121,7 @@ set :bundle_cmd, 'source $HOME/.bash_profile && bundle'
 #############################################################
 #	Git
 #############################################################
-set :repository, "git://github.com/authentic/massanuttenlions.com.git"
+set :repository, "git://github.com/authentic/massanuttenlions.com_gateway_ubuntu.git"
 set :scm, "git"
 set :branch, "master"
 set :deploy_via, :remote_cache
