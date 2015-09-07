@@ -2,29 +2,32 @@
     <table class='table newsletter'>
       <tbody>
       <tr>
-        <td width="70%"><h1 class='newsletter line_height'> Mountain Lion &nbsp;&mdash; <%= @newsletter.period.strftime("%B %Y") %></h1>
+        <td width="70%"><h1 class='newsletter line_height'> Mountain
+          Lion &nbsp;&mdash; <%= @newsletter.period.strftime("%B %Y") %></h1>
 
           <h5 class="line_height"><strong><%= @club.name %></strong> <br> <%= @club.mailing_address %> </h5>
 
-          <p class="line_height"><small>
-            <% if @president %>
-                <em><strong>President:</strong></em> <%= @president.signature %>
-                <a href='mailto:#' target='_blank'> <%= @club.president_email %></a><br>
-            <% end %>
-            <% if @lomfi_president %>
-                <em><strong> LOMFI President:</strong></em> <%= @lomfi_president.signature %>
-                <a href='mailto:#' target='_blank'> <%= @club.lomfi_president_email %></a><br>
-            <% end %>
-            <% if @secretary %>
-                <em><strong>Secretary:</strong></em> <%= @secretary.signature %>
-                <a href='mailto:#' target='_blank'> <%= @club.secretary_email %></a><br>
-            <% end %>
-            <% if @treasurer %>
-                <em><strong> Treasurer:</strong></em> <%= @treasurer.signature %>
-                <a href='mailto:#' target='_blank'> <%= @club.treasurer_email %></a><br>
-            <% end %>
+          <p class="line_height">
+            <small>
+              <% if @president %>
+                  <em><strong>President:</strong></em> <%= @president.signature %>
+                  <a href='mailto:#' target='_blank'> <%= @club.president_email %></a><br>
+              <% end %>
+              <% if @lomfi_president %>
+                  <em><strong> LOMFI President:</strong></em> <%= @lomfi_president.signature %>
+                  <a href='mailto:#' target='_blank'> <%= @club.lomfi_president_email %></a><br>
+              <% end %>
+              <% if @secretary %>
+                  <em><strong>Secretary:</strong></em> <%= @secretary.signature %>
+                  <a href='mailto:#' target='_blank'> <%= @club.secretary_email %></a><br>
+              <% end %>
+              <% if @treasurer %>
+                  <em><strong> Treasurer:</strong></em> <%= @treasurer.signature %>
+                  <a href='mailto:#' target='_blank'> <%= @club.treasurer_email %></a><br>
+              <% end %>
 
-            </small></p>
+            </small>
+          </p>
         </td>
         <td width="30%">
           <img alt='Mountain Lion' src='http://www.massanuttenlions.org/ckeditor_assets/pictures/82/content_logonewsletter1.jpg?1354567578' class='img-circle'>
@@ -38,20 +41,17 @@
   <% if @president %>
 
 
-  <%= image_tag @president.avatar.url(:medium)%><figcaption>Lion President Buddy</figcaption></figure>
+      <%= image_tag @president.avatar.url(:medium) %>
+      <figcaption><%= @president.signature %></figcaption></figure>
 
-<h4><em>PRESIDENT&#39;S MESSAGE</em></h4>
+      <h4><em>PRESIDENT&#39;S MESSAGE</em></h4>
 
-<p>Type  the text here</p>
+      <p>Type the text here</p>
 
-<hr class="clearfix" />
-<h4><em>Lions Club Meeting Minutes</em></h4>
+      <hr class="clearfix"/>
+      <h4><em>Lions Club Meeting Minutes</em></h4>
 
-<p>Type the text here</p>
+      <p>Type the text here</p>
 
-<hr class="clearfix" />
-<h4><em>Lions Club Meeting Minutes</em></h4>
-
-<p>Type the text here</p>
-
-<hr class="clearfix" /><% end %>
+      <hr class="clearfix"/>
+  <% end %>

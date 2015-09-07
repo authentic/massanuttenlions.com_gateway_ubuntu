@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.18'
+gem 'rails', '3.2.20'
 gem 'mysql2', '~> 0.3.20'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -18,7 +18,11 @@ gem 'omniauth-google-oauth2', '~> 0.1.13'
 gem 'json'
 gem 'octokit', '~> 1.23'
 gem 'mercury-rails'
-
+gem 'i18n', '0.6.11'
+gem 'ref', '1.0.5'
+gem 'highline', '1.6.12'
+gem 'nokogiri', '1.5.7'
+gem 'rubyzip', '~> 0.9.9'
 group :development do
   gem 'guard-rspec', '0.5.5'
   gem 'rspec-rails', '2.10.0'
