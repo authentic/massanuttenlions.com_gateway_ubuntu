@@ -281,7 +281,6 @@ DEPENDENCIES
   google_calendar (~> 0.4.3)
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)
-  i18n (= 0.6.11)
   jquery-rails
   json
   libnotify (= 0.5.9)
@@ -293,7 +292,6 @@ DEPENDENCIES
   paperclip (~> 2.7.4)
   rails (= 3.2.18)
   rb-inotify (= 0.8.8)
-  ref (= 2.0.0)
   rspec-rails (= 2.10.0)
   sass-rails (= 3.2.5)
   simple-navigation (= 3.10.0)
