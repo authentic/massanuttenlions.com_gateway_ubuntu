@@ -20,6 +20,7 @@ gem 'octokit', '~> 1.23'
 gem 'mercury-rails'
 gem 'i18n', '0.6.11'
 gem 'ref', '2.0.0'
+
 group :development do
   gem 'guard-rspec', '0.5.5'
   gem 'rspec-rails', '2.10.0'
