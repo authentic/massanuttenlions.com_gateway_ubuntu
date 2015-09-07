@@ -140,10 +140,10 @@ namespace :deploy do
 #############################################################
 #	Symlink tasks
 #############################################################
-  desc "Symlinks the database.yml, .google-api.yaml, ckeditor_assets and paperclip_assets folders"
+  desc "Symlinks the database.yml, google-api.yaml, ckeditor_assets and paperclip_assets folders"
   task :symlink_config_shared, :role => :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-    run "ln -nfs #{shared_path}/config/.google-api.yaml #{release_path}/.google-api.yaml"
+    run "ln -nfs #{shared_path}/config/google-api.yaml #{release_path}/google-api.yaml"
     run "ln -s #{shared_path}/ckeditor_assets #{release_path}/public/ckeditor_assets"
     run "ln -s #{shared_path}/paperclip_assets #{release_path}/public/paperclip_assets"
 
