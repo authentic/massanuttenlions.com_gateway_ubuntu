@@ -41,17 +41,8 @@
   <% if @president %>
 
 
-      <%= image_tag @president.avatar.url(:medium) %>
+      <%= image_tag @president.avatar.url(:medium), :class => "thumbnail" %>
       <figcaption><%= @president.signature %></figcaption></figure>
 
-      <h4><em>PRESIDENT&#39;S MESSAGE</em></h4>
 
-      <p>Type the text here</p>
-
-      <hr class="clearfix"/>
-      <h4><em>Lions Club Meeting Minutes</em></h4>
-
-      <p>Type the text here</p>
-
-      <hr class="clearfix"/>
   <% end %>

@@ -6,7 +6,7 @@ CKEDITOR.addTemplates("my_templates", {imagesPath:CKEDITOR.getUrl("/assets/ckedi
     {title:"President's message",
         image:"template6.gif",
         description:"President's message",
-        html:'<figure class="float-left"><img class="thumbnail" height="170" width="170" alt="Lion President Buddy" class="thumbnail" src="http://massanuttenlions.org/ckeditor_assets/pictures/147/content_buddy_fitzpatrick_photo.jpg?1407546491" /><figcaption>Lion President Buddy</figcaption></figure><h4><em>PRESIDENT&#39;S MESSAGE</em></h4><p>Type the text here</p><hr class="clearfix"/><h4><em>Lions Club Meeting Minutes</em></h4><p>Type the text here</p><hr class="clearfix"/><h4><em>Lions Club Meeting Minutes</em></h4><p>Type the text here</p><hr class="clearfix"/>'},
+        html:'<h4><em>PRESIDENT&#39;S MESSAGE</em></h4><p>Type the text here</p><hr class="clearfix"/><h4><em>Lions Club Meeting Minutes</em></h4><p>Type the text here</p><hr class="clearfix"/><h4><em>Lions Club Meeting Minutes</em></h4><p>Type the text here</p><hr class="clearfix"/>'},
     {title:"Title and Text",
         image:"template7.gif",
         description:"A title and text.",
