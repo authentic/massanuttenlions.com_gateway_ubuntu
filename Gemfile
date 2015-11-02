@@ -27,10 +27,7 @@ group :development do
   gem 'guard-rspec', '0.5.5'
   gem 'rspec-rails', '2.10.0'
   gem 'annotate', '2.5.0'
-
   # Deploy with Capistrano
-
-
   gem 'capistrano', '~> 2.15.6'
   # gem 'capistrano-bundler' # for capistrano/bundler
   # gem 'capistrano-rails' # for capistrano/rails/*
