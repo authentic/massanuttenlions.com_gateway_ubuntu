@@ -77,7 +77,7 @@ MassanuttenlionsCom::Application.configure do
       :port => 587,
       :domain => 'massanuttenlions.org',
       :authentication => :login,
-      :enable_starttls_auto => true,
+      :enable_starttls_auto => false,
       :user_name => 'massanut',
       :openssl_verify_mode  => 'none',
       :password => '5346Trevino'
