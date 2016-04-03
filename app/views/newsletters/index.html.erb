@@ -35,7 +35,7 @@
   <% events.each do |e| %>
 <tr>
   <td><i><%= e.title %></i></td>
-  <td><%= (e.start_time.to_datetime-5.hour).strftime("%B %d, %Y, %I:%M %p")+" - "+(e.end_time.to_datetime-5.hour).strftime("%I:%M %p")%></td>
+  <td><%= (e.start_time.to_datetime.in_time_zone("Eastern Time (US & Canada)")).strftime("%B %d, %Y, %I:%M %p")+" - "+(e.end_time.to_datetime.in_time_zone("Eastern Time (US & Canada)")).strftime("%I:%M %p")%></td>
   <td><%= e.location%></td>
 
 </tr>
@@ -61,7 +61,7 @@
 <% next_period_events.each do |i| %>
       <tr>
         <td><i><%= i.title %></i></td>
-        <td><%= (i.start_time.to_datetime-5.hour).strftime("%B %d, %Y, %I:%M %p")+" - "+(i.end_time.to_datetime-5.hour).strftime("%I:%M %p")%></td>
+        <td><%= (i.start_time.to_datetime.in_time_zone("Eastern Time (US & Canada)")).strftime("%B %d, %Y, %I:%M %p")+" - "+(i.end_time.to_datetime.in_time_zone("Eastern Time (US & Canada)")).strftime("%I:%M %p")%></td>
         <td> <%= i.location %></td>
 
       </tr>

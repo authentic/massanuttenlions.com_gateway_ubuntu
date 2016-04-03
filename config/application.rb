@@ -59,6 +59,7 @@ module MassanuttenlionsCom
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.time_zone = 'Eastern Time (US & Canada)'
 
   end
 end
